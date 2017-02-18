@@ -18,4 +18,12 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function aboutAction(Request $request)
+    {
+        return $this->render('default/about.html.twig');
+    }
 }
