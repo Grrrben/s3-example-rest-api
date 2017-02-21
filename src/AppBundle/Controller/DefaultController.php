@@ -24,6 +24,6 @@ class DefaultController extends Controller
      */
     public function aboutAction(Request $request)
     {
-        return $this->render('default/about.html.twig');
+        return $this->render('default/index.html.twig');
     }
 }

@@ -27,15 +27,14 @@ class User {
     private $email;
 
     /**
-     * @ORM\Column(type="guid")
-     * @ORM\GeneratedValue(strategy="UUID")
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
-    private $uuid;
+    private $password;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
      */
-    private $password;
+    private $roles;
 
     /**
      * @ORM\Column(name="dateCreate", type="datetime", nullable=false)
@@ -103,30 +102,6 @@ class User {
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * Set uuid
-     *
-     * @param guid $uuid
-     *
-     * @return User
-     */
-    public function setUuid($uuid)
-    {
-        $this->uuid = $uuid;
-
-        return $this;
-    }
-
-    /**
-     * Get uuid
-     *
-     * @return guid
-     */
-    public function getUuid()
-    {
-        return $this->uuid;
     }
 
     /**
@@ -199,5 +174,29 @@ class User {
     public function getLastLogin()
     {
         return $this->last_login;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return string
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }
